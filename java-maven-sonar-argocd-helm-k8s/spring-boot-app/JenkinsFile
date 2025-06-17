@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://ec2-34-205-27-227.compute-1.amazonaws.com:9000/"
+        SONAR_URL = "ec2-3-228-2-33.compute-1.amazonaws.com:9000/"
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
