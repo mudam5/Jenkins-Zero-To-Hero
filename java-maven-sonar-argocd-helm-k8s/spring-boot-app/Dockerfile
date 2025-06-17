@@ -1,5 +1,6 @@
-# Use Java 17 base image instead of Java 11
-FROM eclipse-temurin:17-jre-alpine
+# You can change this base image to anything else
+# But make sure to use the correct version of Java
+FROM adoptopenjdk/openjdk17:alpine-jre
 
 # Simply the artifact path
 ARG artifact=target/spring-boot-web.jar
