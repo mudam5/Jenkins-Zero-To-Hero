@@ -54,11 +54,6 @@
         <finalName>spring-boot-web</finalName>
 
         <plugins>
-                 <plugin>
-    <groupId>org.sonarsource.scanner.maven</groupId>
-    <artifactId>sonar-maven-plugin</artifactId>
-    <version>3.0.2</version> <!-- or 3.8.0.2131 if using Java 8+ -->
-</plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -98,7 +93,7 @@
         <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>sonar-maven-plugin</artifactId>
-            <version>3.0.2</version>
+            <version>3.8.0.2131</version>
         </plugin>
                  <plugin>
     <groupId>org.codehaus.mojo</groupId>
