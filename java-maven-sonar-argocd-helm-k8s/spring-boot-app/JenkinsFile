@@ -51,6 +51,8 @@ pipeline {
         GIT_USER_NAME = "mudam5"
     }
     steps {
+        sh 'git config --global --add safe.directory /var/lib/jenkins/workspace/CICD'
+
         checkout([
             $class: 'GitSCM',
             branches: [[name: 'main']],
@@ -65,7 +67,6 @@ pipeline {
                 git config --global user.email "prashanthmudam4@gmail.com"
                 git config --global user.name "mudam5"
                 cd $WORKSPACE
-                git rev-parse --is-inside-work-tree  # Confirm it's inside a valid repo
                 BUILD_NUMBER=${BUILD_NUMBER}
                 sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                 git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
